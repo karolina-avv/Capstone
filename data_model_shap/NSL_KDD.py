@@ -32,7 +32,7 @@ except ImportError:
 
 
 #change
-nsl_kdd_path = '/Users/kvv2005/Desktop/NSL_KDD_Train.csv'
+nsl_kdd_path = '.../DATASETS/NSL_KDD_Train.csv'
 nsl_kdd_df= pd.read_csv(nsl_kdd_path)
 
 print('NSL-KDD Dataset:')
