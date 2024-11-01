@@ -1,14 +1,37 @@
 #!/usr/bin/env python
 # coding: utf-8
-
-get_ipython().system('pip install pandas scikit-learn')
-
-get_ipython().system('pip install tensorflow scikit-learn xgboost adversarial-robustness-toolbox')
-
 import pandas as pd
 import os
+import subprocess
+import sys
+
+# Function to install packages
+def install(package):
+    subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+
+# Install required packages if not already installed
+try:
+    import pandas as pd
+except ImportError:
+    install('pandas')
+
+try:
+    import sklearn
+except ImportError:
+    install('scikit-learn')
+
+try:
+    import tensorflow as tf
+except ImportError:
+    install('tensorflow')
+
+try:
+    import xgboost as xgb
+except ImportError:
+    install('xgboost')
 
 
+#change
 nsl_kdd_path = '/Users/kvv2005/Desktop/NSL_KDD_Train.csv'
 nsl_kdd_df= pd.read_csv(nsl_kdd_path)
 
